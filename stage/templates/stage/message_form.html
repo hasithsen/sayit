@@ -1,0 +1,24 @@
+{% extends "base_generic_stage.html" %}
+
+{% block content %}
+<main class="container">
+  <div class="row">
+    <h1 class="display-2">Have your say. Your way.</h1>
+  </div>
+  <div class="row">
+    <div class="mt-4 form-sayit">
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="mt-2 btn btn-primary btn-lg">Say it!</button>
+        <p>Publish to the Internet.</p>
+      </form>
+    </div>
+  </div>
+<main>
+{% endblock %}
+
+{% block footerstring %}
+Made with 😺 at 🏡 by 
+<a href="https://i.hsen.tech" class="no-decoration">hsen</a>. 
+{% endblock %}
