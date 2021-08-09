@@ -19,7 +19,7 @@ class Message(models.Model):
   content = models.CharField(
     max_length=500,
     null=True, 
-    blank=True,
+    blank=False,
     # help_text="Enter content to say"
     ) 
   created_at = models.DateTimeField(auto_now_add=True)
@@ -29,7 +29,7 @@ class Message(models.Model):
 
   def get_absolute_url(self):
     """Returns the url to access a particular instance of message."""
-    return reverse('message-detail', args=[str(self.id)])
+    return reverse('message-detail', args=[self.id])
 
   def __str__(self):
     """String for representing the messge object (in Admin site etc.)."""

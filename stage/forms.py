@@ -20,7 +20,5 @@ class MessageCreateForm(ModelForm):
 
   def __init__(self, *args, **kwargs):
     super(MessageCreateForm, self).__init__(*args, **kwargs)
-    self.fields['sender'].required = False
-    self.fields['receiver'].required = False
     for visible in self.visible_fields():
       visible.field.widget.attrs['class'] = 'form-control'
