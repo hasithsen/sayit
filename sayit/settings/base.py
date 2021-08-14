@@ -104,11 +104,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-# The absolute path to the directory where collecstatic will collect static files for deployment
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# The absolute path to the directory where collecstatic will collect static files for deployment
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 HASHIDS_SALT = env('HASHIDS_SALT')
