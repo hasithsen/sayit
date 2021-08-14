@@ -1,13 +1,17 @@
 from pathlib import Path
 import os
+import environ
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+senv = environ.Env()
+environ.Env.read_env()
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(' ')
+
+SECRET_KEY = env('SECRET_KEY')
 
 
 # Application definition
@@ -103,4 +107,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-HASHIDS_SALT = os.environ.get('HASHIDS_SALT')
+HASHIDS_SALT = env('HASHIDS_SALT')
