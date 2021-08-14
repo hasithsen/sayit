@@ -21,4 +21,4 @@ class MessageCreateForm(ModelForm):
   def __init__(self, *args, **kwargs):
     super(MessageCreateForm, self).__init__(*args, **kwargs)
     for visible in self.visible_fields():
-      visible.field.widget.attrs['class'] = 'form-control'
+      visible.field.widget.attrs['class'] = 'form-control shadow'

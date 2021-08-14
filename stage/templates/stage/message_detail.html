@@ -1,24 +1,39 @@
 {% extends "base_generic_stage.html" %}
 
+{% load static %}
+
 {% block content %}
 <main class="container ">
   <div class="row">
     <h1 class="display-6">
       {% if message.sender %}
-        <b>{{ message.sender }}</b> said
+        <b>{{ message.sender }}</b> 
+      {% else %}
+        Someone
       {% endif %}
+      said to
       {% if message.receiver %}
-        to <b>{{ message.receiver }}</b>:
+        <b>{{ message.receiver }}</b>:
+      {% else %}
+        someone:
       {% endif %}
     </h1>
   </div>
   <div class="my-3 row">
-    <h1 class="display-1">
+    <h1 class="display-1 pt-1 pb-4 bg-light border rounded-3">
       {{ message.content }}
     </h1>
   </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-4">
+      <input type="text" value="{{ request.META.HTTP_HOST }}{% url 'message-detail' message.pk %}" class="form-control" style="display: none;" id="id_message-detail-url" disabled="" >
+      <a href="#" class="no-decoration" onclick="copyMessageDetailURL();">Copy message link</a>
+    </div>
+  </div>
   <h6 class="py-4"><a href="{% url 'index' %}" class="no-decoration">Have your say!</a></h6>
 <main>
+
+<script src="{% static 'js/main.js' %}"></script> 
 {% endblock %}
 
 {% block footerstring %}
