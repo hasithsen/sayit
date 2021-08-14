@@ -17,10 +17,13 @@
       {{ message.content }}
     </h1>
   </div>
-  <p>
-    {% comment %} Above content was written by someone on the Internet, not by the creator of this website.<br/ > {% endcomment %}
-    Report abuse to <a href="mailto:sayit@hsen.tech" class="no-decoration">sayit@hsen.tech</a>.
-  </p>
   <h6 class="py-4"><a href="{% url 'index' %}" class="no-decoration">Have your say!</a></h6>
 <main>
+{% endblock %}
+
+{% block footerstring %}
+{% comment %} <p> {% endcomment %}
+  {% comment %} Above content was written by someone on the Internet, not by the creator of this website.<br/ > {% endcomment %}
+  Report abuse to <a href="mailto:sayit@hsen.tech" class="no-decoration">sayit@hsen.tech</a>.
+{% comment %} </p> {% endcomment %}
 {% endblock %}
