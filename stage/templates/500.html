@@ -1,0 +1,17 @@
+{% extends "base_generic_stage.html" %}
+
+{% block content %}
+<main class="container">
+  <div class="row">
+    <h1 class="display-2">Oops, something went wrong</h1>
+  </div>
+  <div class="mt-5 row">
+    <h6 class="py-4"><a href="{% url 'index' %}" class="no-decoration">Have your say!</a></h6>
+  </div>
+<main>
+{% endblock %}
+
+{% block footerstring %}
+Made with 😺 at 🏡 by 
+<a href="https://i.hsen.tech" class="no-decoration">hsen</a>. 
+{% endblock %}
