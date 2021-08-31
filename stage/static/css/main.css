@@ -27,16 +27,16 @@ body {
   z-index: 2;
 }
 
+.form-sayit textarea[name="content"] {
+  border-radius: .5em;
+}
+
 .form-sayit input[name="sender"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: .5em;
 }
 
 .form-sayit input[name="receiver"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-radius: .5em;
 }
 
 .copyleft {
