@@ -2,7 +2,7 @@
 
 ### Service to publish a webpage to display what you want to say 😜 
 
-![Message form screenshot](images/message-form.png?raw=true "Message form screenshot")
+[Have your say!](https://sayit.hsen.tech "Webpage")
 
 ![Message view screenshot](images/message-view.png?raw=true "Message view screenshot")
 
