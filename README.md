@@ -2,7 +2,9 @@
 
 ### Service to publish a webpage to display what you want to say 😜 
 
-![Screenshot](images/screenshot.png?raw=true)
+![Message form screenshot](images/message-form.png?raw=true "Message form screenshot")
+
+![Message view screenshot](images/message-view.png?raw=true "Message view screenshot")
 
 #### Credits
  - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website
