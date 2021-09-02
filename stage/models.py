@@ -39,4 +39,4 @@ class Message(models.Model):
 
   def __str__(self):
     """String for representing the messge object (in Admin site etc.)."""
-    return f'{self.id} - {self.content} - {self.votes}'
+    return f'{self.id} - {self.content} - {self.views}'
