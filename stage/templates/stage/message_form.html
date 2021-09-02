@@ -29,15 +29,15 @@
                 {{ msg.content|truncatechars:20 }}
                 </a></td>
               <td>
-                {% if msg.sayer %}
-                  {{ msg.sayer|truncatechars:20 }}
+                {% if msg.sender %}
+                  {{ msg.sender|truncatechars:20 }}
                 {% else %}
                   <span class="fw-light">Anonymous</span>
                 {% endif %}
               </td>
               <td>
-                {% if msg.sayee %}
-                  {{ msg.sayee|truncatechars:20 }}
+                {% if msg.receiver %}
+                  {{ msg.receiver|truncatechars:20 }}
                 {% else %}
                   <span class="fw-light">Anonymous</span>
                 {% endif %}
