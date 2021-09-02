@@ -33,6 +33,10 @@ class Message(models.Model):
   # class Meta:
   #     ordering = ['-id']
 
+  def _get_views(self):
+    """Returns the value of views attribute of the message instance"""
+    return self.views
+
   def get_absolute_url(self):
     """Returns the url to access a particular instance of message."""
     return reverse('message-detail', args=[self.id])

@@ -6,7 +6,51 @@
     <h1 class="display-2">Have your say. Louder.</h1>
     <h1 class="display-6">Get a whole webpage to drive your point home 😜</h1>
   </div>
-  <div class="mt-5 row d-flex justify-content-around bg-light border">
+  <div class="mt-5 row d-flex justify-content-center p-3 rounded-3">
+    <h5 class="col-lg-6">
+      <table class="table table-borderless">
+        {% comment %} <caption class="text-center">Top 5 viewed</caption> {% endcomment %}
+        <thead>
+          <tr>
+            {% comment %} <th scope="col">Rank</th> {% endcomment %}
+            <th scope="col">Views</th>
+            <th scope="col">Message</th>
+            <th scope="col">Said by</th>
+            <th scope="col">Said to</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for msg in most_viewed_messages %}
+            {% comment %} <div class="pt-2 rounded-3"> {% endcomment %}
+            <tr>
+              {% comment %} <th scope="row">{{ forloop.counter }}</th> {% endcomment %}
+              <td>{{ msg.views }}</td>
+              <td><a href="{% url 'message-detail' msg.pk %}" class="no-decoration">
+                {{ msg.content|truncatechars:20 }}
+                </a></td>
+              <td>
+                {% if msg.sayer %}
+                  {{ msg.sayer|truncatechars:20 }}
+                {% else %}
+                  <span class="fw-light">Anonymous</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if msg.sayee %}
+                  {{ msg.sayee|truncatechars:20 }}
+                {% else %}
+                  <span class="fw-light">Anonymous</span>
+                {% endif %}
+              </td>
+            </tr>
+            {% comment %} </div> {% endcomment %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </h5>
+    <h5 class="mb-3 text-secondary">&#9652; Top 5 most viewed</h5>
+  </div>
+  <div class="mt-5 row d-flex justify-content-around bg-light border rounded-3">
     <div class="p-3 col-lg-3 bg-light rounded-3">
       <h1 class="display-5 text-secondary">1.</h1>
       <h2 class="fw-light">Enter your message</h2>
