@@ -24,6 +24,11 @@
       {{ message.content }}
     </h1>
   </div>
+  <div class="my-3 row">
+    <span class="text-secondary">
+      This message was viewed <h6 class="text-secondary" style="margin: 0; display: inline-block;">{{ message.views }}</h6> time{{ message.views|pluralize }}.
+    </span>
+  </div>
   <div class="row d-flex justify-content-center">
     <div class="col-lg-4">
       <input type="text" value="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{% url 'message-detail' message.pk %}" class="form-control" style="display: none;" id="id_message-detail-url" disabled="" >
