@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-# from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
 from .models import Message
@@ -24,7 +23,7 @@ class MessageDetailView(generic.DetailView):
 
   def get(self, request, *args, **kwargs):
     self.object = self.get_object()
-    # Increase views attribute of message model
+    # Increase value of views attribute in the message instance
     self.object.views += 1
     self.object.save() 
     context = self.get_context_data(object=self.object)

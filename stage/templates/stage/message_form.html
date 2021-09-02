@@ -1,5 +1,7 @@
 {% extends "base_generic_stage.html" %}
 
+{% load humanize %}
+
 {% block content %}
 <main class="container">
   <div class="row">
@@ -9,10 +11,8 @@
   <div class="mt-5 row d-flex justify-content-center p-3 rounded-3">
     <h5 class="col-lg-6">
       <table class="table table-borderless">
-        {% comment %} <caption class="text-center">Top 5 viewed</caption> {% endcomment %}
         <thead>
           <tr>
-            {% comment %} <th scope="col">Rank</th> {% endcomment %}
             <th scope="col">Views</th>
             <th scope="col">Message</th>
             <th scope="col">Said by</th>
@@ -21,10 +21,8 @@
         </thead>
         <tbody>
           {% for msg in most_viewed_messages %}
-            {% comment %} <div class="pt-2 rounded-3"> {% endcomment %}
             <tr>
-              {% comment %} <th scope="row">{{ forloop.counter }}</th> {% endcomment %}
-              <td>{{ msg.views }}</td>
+              <td>{{ msg.views|intcomma }}</td>
               <td><a href="{% url 'message-detail' msg.pk %}" class="no-decoration">
                 {{ msg.content|truncatechars:20 }}
                 </a></td>
@@ -43,7 +41,6 @@
                 {% endif %}
               </td>
             </tr>
-            {% comment %} </div> {% endcomment %}
           {% endfor %}
         </tbody>
       </table>
@@ -70,7 +67,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="mt-2 btn btn-primary btn-lg">Say it!</button>
-        <p>Published messages may be removed without notice.</p>
+        <p>Never enter private data.</p>
       </form>
     </div>
   </div>
