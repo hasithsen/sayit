@@ -6,7 +6,7 @@
 
 [Have your say!](https://sayit.hsen.tech "Webpage")
 
-### Setup
+### Local setup
   - Clone repository
   - Create ```.env``` file inside ```sayit/settings/``` with following variables
     ```
@@ -15,6 +15,10 @@
 
     HASHIDS_SALT='<random-characters-as-salt>'
     ```
+  - Start development server as follows, site will be accessible at http://localhost:8000/
+    ```
+    python3 manage.py runserver --settings="sayit.settings.dev"
+    ``` 
 
 #### Credits
  - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website
