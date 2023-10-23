@@ -4,8 +4,6 @@
 
 ![Message view screenshot](images/message-view.png?raw=true "Message view screenshot")
 
-[Have your say!](https://sayit.hsen.tech "Webpage")
-
 ### Local setup
   - Clone repository
   - Create ```.env``` file inside ```sayit/settings/``` with following variables
